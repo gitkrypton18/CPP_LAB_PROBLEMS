@@ -1,33 +1,32 @@
-// program to print the first n Fibonacci numbers using functions
 #include <iostream>
 using namespace std;
-
-void Fibo(int n) {
-    int t1 = 0, t2 = 1, nextTerm = 0;
-
-    for (int i = 1; i <= n; ++i) {
-        if(i == 1) {
-            cout << t1 << "\t";
-            continue;
-        }
-        if(i == 2) {
-            cout << t2 << "\t";
-            continue;
-        }
-        nextTerm = t1 + t2;
-        t1 = t2;
-        t2 = nextTerm;
-
-        cout << nextTerm << "\t";
+int fibo(int n)
+{
+    if (n == 1)
+    {
+        return 0;
     }
+    else if (n == 2)
+    {
+        return 1;
+    }
+    // cout << "Series" << endl;
+
+    return fibo(n - 2) + fibo(n - 1);
 }
+// series is 0 1 1 2 3 5 8 13 // zero is must
+int main()
+{
+    int n;
+    cout << "enter upto which term fibo is required : " << endl;
+    cin >> n;
 
-int main() {
-    int a;
-
-    cout << "Enter the number of terms: ";
-    cin >> a;
-    Fibo(a);
+    cout << "the series is :" << endl;
+    for (int i = 1; i <= n; i++)
+    {
+        /* code */
+        cout << fibo(i) << "\t";
+    }
 
     return 0;
 }
