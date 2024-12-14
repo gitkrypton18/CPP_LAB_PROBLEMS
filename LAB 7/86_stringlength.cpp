@@ -1,6 +1,8 @@
+// WRITE A FUNCTION TO RADE LINE OF TEXT AND FIND OUT LENGTH OF STRING
 #include <iostream>
 using namespace std;
-void ReadData(string s)
+void ReadData(string s) // function taking a string and following below operations
+
 {
     int count = 0;
     getline(cin, s);
@@ -8,12 +10,17 @@ void ReadData(string s)
     {
         if (s[i] != '\0')
         {
+            if (s[i] == ' ')
+            {
+                continue;
+            }
+
             count++;
         }
         else
             break;
     }
-    cout << "the string length of " << s << " is " << count << endl;
+    cout << "the string length excluding spaces of " << s << " is " << count << endl;
 }
 int main()
 {

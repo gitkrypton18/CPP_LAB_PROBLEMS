@@ -6,70 +6,51 @@ ARRAY OF STRUCTURE INTO FUNCTION).*/
 #include <string>
 using namespace std;
 
-typedef struct student
+typedef struct student // defining a structure containing the student data like name roll no and marks
 {
     string name;
     float roll_no;
     float marks;
 } ss;
 
-// void ReadData(ss stu[10])
-// {
-//     for (int i = 0; i < 10; i++)
-//     {
-//         cout << "Enter the name" << endl;
-//         cin >> stu[i].name;
-//         cout << "Enter the rollNo" << endl;
-//         cin >> stu[i].roll_no;
-//         cout << "Enter the Marks" << endl;
-//         cin >> stu[i].marks;
-//     }
-// }
-// void marksmax(student stu[])
-// {
-//     int initialmarks = 0;
-//     for (int i = 0; i < 10; i++)
-//     {
-//         if (stu[i].marks > initialmarks)
-//         {
-//             initialmarks = stu[i].marks;
-//         }
-//         else
-//         {
-//             cout << i;
-//         }
-//     }
-// }
-int main()
+void ReadData(ss stu[10]) // reading student data
 {
-    ss stu[10];
-    int initialmarks = 0;
-
     for (int i = 0; i < 10; i++)
     {
         cout << "Enter the details of Student " << i + 1 << endl;
         cout << "Enter the name" << endl;
-
-        cin.ignore();
-        getline(cin, stu[i].name);
-        cout << endl;
+        cin.ignore();              // to remove the new line character
+        getline(cin, stu[i].name); // get the complete string with spaces
         cout << "Enter the rollNo" << endl;
         cin >> stu[i].roll_no;
         cout << "Enter the Marks" << endl;
         cin >> stu[i].marks;
     }
+}
+void MarksMax(ss stu[10]) // finding maxmarks function
+{
+    int j = 0; // keeping counter for which student getting more marks
+    int initialmarks = 0;
     int i;
     for (i = 0; i < 10; i++)
     {
 
-        if (stu[i].marks >= initialmarks)
+        if (stu[i].marks > initialmarks)
         {
             initialmarks = stu[i].marks;
+            j = i;
         }
-        else
-            break;
     }
 
-    cout << "Max marks Student is of the roll no " << i << endl;
+    cout << "Max marks Student :" << stu[j].name << endl
+         << stu[j].roll_no << endl
+         << stu[j].marks << endl;
+}
+int main()
+{
+    ss stu[10];
+    ReadData(stu);
+    MarksMax(stu);
+
     return 0;
 }
