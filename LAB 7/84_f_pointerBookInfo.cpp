@@ -9,17 +9,17 @@ struct BookInfo
     string AuthorName;
 };
 
-void bookinfoRead(BookInfo &Book)
+void bookinfoRead(BookInfo *Book)
 {
     cout << "Enter the book Name :" << endl;
-    getline(cin, Book.Name);
+    getline(cin, *Book.Name);
     cout << "Enter the Author Name :" << endl;
-    getline(cin, Book.AuthorName);
+    getline(cin, *Book.AuthorName);
     cout << "Enter the Publication Year :" << endl;
-    cin >> Book.PubYear;
+    cin > Book.PubYear;
 }
 
-void bookinfoDisplay(BookInfo Book)
+void bookinfoDisplay(BookInfo *Book)
 {
     cout << "The book Name is : " << Book.Name << endl;
     cout << "The Author Name is : " << Book.AuthorName << endl;
@@ -29,8 +29,8 @@ int main()
 {
 
     BookInfo Book;
-    bookinfoRead(Book);
-    bookinfoDisplay(Book);
+    bookinfoRead(&Book);
+    bookinfoDisplay(&Book);
 
     return 0;
 }

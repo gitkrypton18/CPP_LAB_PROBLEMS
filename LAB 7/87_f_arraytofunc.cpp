@@ -1,3 +1,7 @@
+/*WRITE A PROGRAM TO READ INFORMATION OF 10 STUDENT AND DISPLAY THE
+INFORMATION OF THOSE STUDENT WHOSE MARKS ARE GREATHER THAN 500.(PASSING
+ARRAY OF STRUCTURE INTO FUNCTION).*/
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -9,27 +13,63 @@ typedef struct student
     float marks;
 } ss;
 
-void ReadData(student arr[])
-{
-    int check, max = 0;
-    for (int i = 0; i < 10; i++)
-    {
-
-        cout << "Student" << i + 1 << endl;
-        cin >> arr[i].name >> arr[i].roll_no >> arr[i].marks;
-        return arr[];
-    }
-    void marksmax()
-}
+// void ReadData(ss stu[10])
+// {
+//     for (int i = 0; i < 10; i++)
+//     {
+//         cout << "Enter the name" << endl;
+//         cin >> stu[i].name;
+//         cout << "Enter the rollNo" << endl;
+//         cin >> stu[i].roll_no;
+//         cout << "Enter the Marks" << endl;
+//         cin >> stu[i].marks;
+//     }
+// }
+// void marksmax(student stu[])
+// {
+//     int initialmarks = 0;
+//     for (int i = 0; i < 10; i++)
+//     {
+//         if (stu[i].marks > initialmarks)
+//         {
+//             initialmarks = stu[i].marks;
+//         }
+//         else
+//         {
+//             cout << i;
+//         }
+//     }
+// }
 int main()
 {
-    int i, check;
-    float max = 0;
-    struct student arr[10];
-    cout << "Enter the details as follows:\nName\tRollNo\tMarks\n";
+    ss stu[10];
+    int initialmarks = 0;
 
-    cout << "Detail of Max Marks Student : " << check + 1 << "\t: ";
-    cout << "Name : " << arr[check].name << "\t" << "Roll No : " << arr[check].roll_no << "\t" << "Marks : " << arr[check].marks << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Enter the details of Student " << i + 1 << endl;
+        cout << "Enter the name" << endl;
 
+        cin.ignore();
+        getline(cin, stu[i].name);
+        cout << endl;
+        cout << "Enter the rollNo" << endl;
+        cin >> stu[i].roll_no;
+        cout << "Enter the Marks" << endl;
+        cin >> stu[i].marks;
+    }
+    int i;
+    for (i = 0; i < 10; i++)
+    {
+
+        if (stu[i].marks >= initialmarks)
+        {
+            initialmarks = stu[i].marks;
+        }
+        else
+            break;
+    }
+
+    cout << "Max marks Student is of the roll no " << i << endl;
     return 0;
 }
