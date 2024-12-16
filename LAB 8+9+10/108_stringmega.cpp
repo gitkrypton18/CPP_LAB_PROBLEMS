@@ -30,7 +30,7 @@ void StringConcat(string a, string b) // concate two string rakesh+roshan=rakesh
     cout << "The concatenated string is : " << a << endl;
 }
 // D
-void StringReverse(string a)
+void StringReverse(string a) // reverse stirng
 {
 
     int c = 0, i = 0;
