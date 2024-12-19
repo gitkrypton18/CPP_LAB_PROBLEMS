@@ -33,12 +33,12 @@ void StringConcat(string a, string b) // concate two string rakesh+roshan=rakesh
 void StringReverse(string a) // reverse stirng
 {
 
-    int c = 0, i = 0;
-    while (a[i] != '\0')
+    int c = 0;
+    for (int i = 0; a[i] != '\0'; i++)
     {
         c++;
-        i++;
     }
+
     char r[c + 1];
     for (int i = 0; i < c; i++)
     {
@@ -51,6 +51,7 @@ int main()
 {
     string a, b;
     a = "Rakesh";
+    cout << "First String :" << a << endl;
     cout << "Copy" << endl;
     cout << "b as initial : " << b << endl;
     cout << "b as final : ";
