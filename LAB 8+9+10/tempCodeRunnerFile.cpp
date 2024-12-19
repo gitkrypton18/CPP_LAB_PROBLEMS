@@ -1,5 +1,13 @@
-// Add tabs for alignment (adjust for shorter/longer names)
-        // if ((ptr + i)->EName.length() < 8)
-        //     cout << "\t\t";
-        // else if ((ptr + i)->EName.length() < 16)
-        //     cout << "\t";
+for (int i = 0; i < n - 1; i++)
+    // {
+    //     char *ptr = &s[i][0];
+    //     for (int j = 0; j < i; j++)
+    //     {
+    //         if (s[i][j] > s[i][j + 1])
+    //         {
+    //             temp[j] = s[i][j];
+    //             s[i][j] = s[i][j + 1];
+    //             s[i][j + 1] = temp;
+    //         }
+    //     }
+    // }

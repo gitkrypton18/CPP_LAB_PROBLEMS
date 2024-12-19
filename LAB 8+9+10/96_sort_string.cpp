@@ -5,26 +5,33 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Enter the number of strings" << endl;
+    string temp;
+    cout << "Enter the number of strings you want to apply\n";
     cin >> n;
+    string str[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> str[i];
+    }
+    cout << endl;
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (str[j] > str[j + 1])
+            {
 
-    string s[n];
-    string *ptr = &s[0];
+                temp = str[j];
+                str[j] = str[j + 1];
+                str[j + 1] = temp;
+            }
+        }
+    }
 
     for (int i = 0; i < n; i++)
     {
-        cin.ignore();
-        getline(cin, *ptr);
-        ptr++;
+        cout << str[i] << endl;
     }
-    for (int i = 0; i < n; i++)
-    {
-
-        cout << *ptr << endl;
-        ptr++;
-    }
-
-    // checking the order of strings
 
     return 0;
 }
