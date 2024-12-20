@@ -27,7 +27,7 @@ int main()
             }
         }
     }
-
+    cout << "The ordered string is :" << endl;
     for (int i = 0; i < n; i++)
     {
         cout << str[i] << endl;

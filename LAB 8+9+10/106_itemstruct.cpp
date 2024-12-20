@@ -13,30 +13,40 @@ struct Item
     int Price;
 };
 // in input void we use address fitting of the variables
-void ReadItem(Item &product) // always remember to use & in a structure to store data
+void ReadItem(int n, Item item[]) // always remember to use & in a structure to store data
 {
+    for (int i = 0; i < n; i++)
+    {
 
-    cout << "Enter the name" << endl;
-    getline(cin, product.Item_Name);
-    cout << "Enter the quantity" << endl;
-    cin >> product.Quantity;
-    cout << "Enter the price" << endl;
-    cin >> product.Price;
+        cout << "Enter the name" << endl;
+        getline(cin, item[i].Item_Name);
+        cout << "Enter the quantity" << endl;
+        cin >> item[i].Quantity;
+        cout << "Enter the price" << endl;
+        cin >> item[i].Price;
+        cin.ignore();
+    }
 }
-void Output(Item product)
+void Output(int n, Item item[])
 {
-    cout << "Item Name : " << product.Item_Name << endl;
-    cout << "Quantity : " << product.Quantity << endl;
-    cout << "Price : " << product.Price << endl;
-    cout << "The Amount is : " << product.Price * product.Quantity << endl;
+    cout << endl;
+    for (int i = 0; i < n; i++)
+    {
+
+        cout << "The Amount of " << item[i].Item_Name << " is : " << item[i].Price * item[i].Quantity << endl;
+    }
 }
 
 int main()
 {
+    cout << "No of Products ?" << endl;
+    int n;
+    cin >> n;
+    cin.ignore();
+    struct Item item[n];
 
-    struct Item product;
     cout << "Enter the product Details" << endl;
-    ReadItem(product);
-    Output(product);
+    ReadItem(n, item);
+    Output(n, item);
     return 0;
 }
