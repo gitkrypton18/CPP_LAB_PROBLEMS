@@ -37,7 +37,7 @@ void MarksMax(ss stu[], int size) // finding maxmarks function
     {
         if (stu[i].marks > 500)
         {
-            cout << stu[i].name << "\t"
+            cout << stu[i].name << "\t\t"
                  << stu[i].roll_no << "\t\t"
                  << stu[i].marks << endl;
         }
