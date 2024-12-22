@@ -4,17 +4,15 @@ using namespace std;
 
 int main()
 {
-    int a, b;
-    a = 456;
+    int value = 10;    // Declare an integer variable
+    int *ptr = &value; // Initialize pointer with address of value
 
-    int *x = &a;
+    cout << "Original value: " << value << endl;
 
-    cout << "Initial Value of a is : " << *x << endl;
-    cin >> b;
-    int *y = &b;
-    x = y;
+    // Modify value using pointer
+    *ptr = 20;
 
-    cout << "Final Value of a is : " << *x << endl;
+    cout << "Modified value: " << value << endl;
 
     return 0;
 }
