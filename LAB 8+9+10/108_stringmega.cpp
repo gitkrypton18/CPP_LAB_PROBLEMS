@@ -14,7 +14,7 @@ void StringCopy(string a, string b) // copy string into empty
     cout << b;
 }
 // B
-void StringCompare(string a, string b) // comapre the strings
+void StringCompare(string a, string b) // compare the strings
 {
     if (a == b)
     {

@@ -1,7 +1,7 @@
 // IMPLEMENT A FUNCTION NAMED AS FLIP; WHICH WILL TAKE A NUMBER AS INPUT AND FLIP ITS
 //  LAST N DIGITS
 //  FOR EXAMPLE FLIP(123, 2)= 132 ; (HERE N=2) FLIP(12345,3)= 12543 (HERE N=3).
-
+// you can also say it advanced version of reverse number
 #include <iostream>
 using namespace std;
 int Flip(int num, int n)
